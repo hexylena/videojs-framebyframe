@@ -1,58 +1,39 @@
 // videojs-framebyframe-plugin
-
-videojs.plugin('framebyframe', function(options) {
+function framebyframe(options) {
     var player = this,
-        items = [],
-        selectedItem;
+        frameTime = 1 / 30; // assume 30 fps
 
-
-    videojs.FrameByFrameMenuItem = videojs.MenuItem.extend({
-        init: function(player, options) {
-            videojs.MenuItem.call(this, player, options);
-            this.on('click', this.onClick);
-        }
-    });
-    videojs.FrameByFrameMenuItem.prototype.onClick = function(e) {
-        //for (var i = 0, l = items.length; i < l; i++) {
-            //items[i].selected(false);
-        //}
-	console.log(this)
-    }
-
-    videojs.FrameByFrameButton = videojs.MenuButton.extend({
+    videojs.FBFButton = videojs.Button.extend({
         init: function(player, options){
-            videojs.MenuButton.call(this, player, options);
-        }
+            videojs.Button.call(this, player, options);
+            console.log(options.value);
+            this.step_size = options.value
+            this.on('click', this.onClick);
+        },
     });
-    videojs.FrameByFrameButton.prototype.createItems = function() {
-        var item;
-        options.forEach(function(opt) {
-            item = new videojs.FrameByFrameMenuItem(player, { label: opt.text, step: opt.step});
-            if (opt.selected) {
-                selectedItem = item;
-            }
-            items.push(item);
-        });
-        return items;
+
+    videojs.FBFButton.prototype.onClick = function() {
+        //Start by pausing the player
+        player.pause();
+        // Calculate movement distance
+        var dist = frameTime * this.step_size;
+        player.currentTime(player.currentTime() + dist)
+        // Now calculate movement distance
     }
 
     player.ready(function() {
-        var button = new videojs.FrameByFrameButton(player, {
-            el: videojs.Component.prototype.createEl(null, {
-                className: 'vjs-res-button vjs-menu-button vjs-control',
-                innerHTML: '<div class="vjs-control-content" style="font-size: 11px; line-height: 28px;"><span class="vjs-frame-step"></span></div>',
-                role: 'button'
-            })
+        options.forEach(function(opt) {
+            player.controlBar.addChild(
+                new videojs.FBFButton(player, {
+                    el: videojs.Component.prototype.createEl(null, {
+                        className: 'vjs-res-button vjs-control',
+                        innerHTML: '<div class="vjs-control-content" style="font-size: 11px; line-height: 28px;"><span class="vjs-fbf">' + opt.text + '</span></div>',
+                        role: 'button'
+                    }),
+                    value: opt.step
+                })
+            );
         });
-	player.controlBar.frameByFrameButton = player.controlBar.addChild(button);
-
-        try {
-            if (player.c.P.id.indexOf('html5') == -1) { // FIXME player.c.P
-                button.hide();
-            }
-        } catch (err) {
-            console.log("can't detect tech.");
-        }
     });
-});
-
+};
+videojs.plugin('framebyframe', framebyframe);
