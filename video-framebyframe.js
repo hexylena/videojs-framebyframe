@@ -6,8 +6,8 @@ function framebyframe(options) {
     videojs.FBFButton = videojs.Button.extend({
         init: function(player, options){
             videojs.Button.call(this, player, options);
-            console.log(options.value);
-            this.step_size = options.value
+	    frameTime = 1/options.fps;
+            this.step_size = options.value;
             this.on('click', this.onClick);
         },
     });
@@ -22,7 +22,7 @@ function framebyframe(options) {
     }
 
     player.ready(function() {
-        options.forEach(function(opt) {
+        options.steps.forEach(function(opt) {
             player.controlBar.addChild(
                 new videojs.FBFButton(player, {
                     el: videojs.Component.prototype.createEl(null, {
@@ -30,7 +30,8 @@ function framebyframe(options) {
                         innerHTML: '<div class="vjs-control-content" style="font-size: 11px; line-height: 28px;"><span class="vjs-fbf">' + opt.text + '</span></div>',
                         role: 'button'
                     }),
-                    value: opt.step
+                    value: opt.step,
+		    fps: options.fps,
                 })
             );
         });

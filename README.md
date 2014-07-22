@@ -40,12 +40,15 @@ Allows users to step frame-by-frame through a video. This has to make an unfortu
       autoplay: true,
       preload: 'auto',
       plugins: {
-        framebyframe: [
-          { text: '-5', step: -5 },
-          { text: '-1', step: -1 },
-          { text: '+1', step: 1 },
-          { text: '+5', step: 5 },
-        ]
+        framebyframe: {
+          fps: 30,
+          steps: [
+            { text: '-5', step: -5 },
+            { text: '-1', step: -1 },
+            { text: '+1', step: 1 },
+            { text: '+5', step: 5 },
+          ]
+        }
       }
     });
   </script>
