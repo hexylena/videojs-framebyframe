@@ -6,9 +6,8 @@ function framebyframe(options) {
     videojs.FBFButton = videojs.Button.extend({
         init: function(player, options){
             videojs.Button.call(this, player, options);
-	    frameTime = 1/options.fps;
+            frameTime = 1/options.fps;
             this.step_size = options.value;
-            this.on('click', this.onClick);
         },
     });
 
@@ -31,7 +30,7 @@ function framebyframe(options) {
                         role: 'button'
                     }),
                     value: opt.step,
-		    fps: options.fps,
+                    fps: options.fps,
                 })
             );
         });
