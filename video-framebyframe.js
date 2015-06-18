@@ -8,6 +8,7 @@ function framebyframe(options) {
             videojs.Button.call(this, player, options);
             frameTime = 1/options.fps;
             this.step_size = options.value;
+            this.on('click', this.onClick);
         },
     });
 
