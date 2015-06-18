@@ -27,30 +27,53 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <h1 class="header">Videojs-framebyframe</h1>
-        <p class="header">frame-by-frame stepping plugin for use with video.js</p>
-
-        <ul>
-          <li class="download"><a class="buttons" href="https://github.com/erasche/videojs-framebyframe/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/erasche/videojs-framebyframe/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/erasche/videojs-framebyframe">View On GitHub</a></li>
-        </ul>
-
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/erasche">erasche</a></p>
-
-
-      </header>
       <section>
+        <h1>Videojs-framebyframe</h1>
+        <p>frame-by-frame stepping plugin for use with video.js</p>
   <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
       poster="//video-js.zencoder.com/oceans-clip.png"
       data-setup="{}">
     <source src="//video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
     <source src="//video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
     <source src="//video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
-    <track kind="captions" src="//www.videojs.com/vtt/captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+    <track kind="captions" src="captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
     <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
   </video>
+
+        <ul>
+          <li><a href="https://github.com/erasche/videojs-framebyframe/zipball/master">Download ZIP</a></li>
+          <li><a href="https://github.com/erasche/videojs-framebyframe/tarball/master">Download TAR</a></li>
+          <li><a href="https://github.com/erasche/videojs-framebyframe">View On GitHub</a></li>
+        </ul>
+        <p>This project is maintained by <a href="https://github.com/erasche">erasche</a></p>
+
+        <h3>Use</h3>
+        Just add a snippet like the following:
+        <pre>
+var video = videojs("example_video_1", {
+  controls: true,
+  autoplay: true,
+  preload: 'auto',
+  plugins: {
+    framebyframe: {
+      fps: 23.98,
+      steps: [
+        { text: '-5', step: -5 },
+        { text: '-1', step: -1 },
+        { text: '+1', step: 1 },
+        { text: '+5', step: 5 },
+      ]
+    }
+  }
+});
+        </pre>
+
+        The <code>fps</code> value can most easily be determined with ffmpeg/avconv. 
+        <pre>
+$ avconv -i oceans-clip.mp4 2>&1 | egrep -o '[0-9.]+ fps'
+23.98 fps
+        </pre>
+
 
   <script type='text/javascript'>
     var video = videojs("example_video_1", {
@@ -59,7 +82,7 @@
       preload: 'auto',
       plugins: {
         framebyframe: {
-          fps: 30,
+          fps: 23.98,
           steps: [
             { text: '-5', step: -5 },
             { text: '-1', step: -1 },
