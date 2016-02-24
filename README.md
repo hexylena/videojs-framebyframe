@@ -1,6 +1,8 @@
 videojs-framebyframe
 ====================
 
+[![Build Status](https://travis-ci.org/erasche/videojs-framebyframe.svg?branch=master)](https://travis-ci.org/erasche/videojs-framebyframe)
+
 [Check out the demo!](http://erasche.github.io/videojs-framebyframe)
 
 Allows users to step frame-by-frame through a video.
