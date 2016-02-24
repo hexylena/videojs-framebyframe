@@ -39,7 +39,7 @@ function framebyframe(options) {
                     ),
                     value: opt.step,
                     fps: options.fps,
-                })
+                }),
             {}, opt.index);
         });
     });
