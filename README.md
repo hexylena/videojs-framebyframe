@@ -1,6 +1,9 @@
 videojs-framebyframe
 ====================
 
+[![npm version](https://img.shields.io/npm/v/videojs-framebyframe.svg?style=flat)](https://www.npmjs.com/package/videojs-framebyframe)
+[![npm](https://img.shields.io/npm/dm/videojs-framebyframe.svg)]()
+[![License](https://img.shields.io/npm/l/videojs-framebyframe.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/erasche/videojs-framebyframe.svg?branch=master)](https://travis-ci.org/erasche/videojs-framebyframe)
 
 [Check out the demo!](http://erasche.github.io/videojs-framebyframe)
