@@ -6,7 +6,7 @@ videojs-framebyframe
 [![License](https://img.shields.io/npm/l/videojs-framebyframe.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/erasche/videojs-framebyframe.svg?branch=master)](https://travis-ci.org/erasche/videojs-framebyframe)
 
-[Check out the demo!](http://erasche.github.io/videojs-framebyframe)
+[Check out the demo!](https://erasche.github.io/videojs-framebyframe)
 
 Allows users to step frame-by-frame through a video.
 
