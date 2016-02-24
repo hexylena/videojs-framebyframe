@@ -19,6 +19,6 @@
     "examples"
   ],
   "dependencies": {
-    "video.js": ">=5.3.0",
+    "video.js": ">=5.3.0"
   }
 }
