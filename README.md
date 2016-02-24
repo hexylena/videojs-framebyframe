@@ -5,6 +5,7 @@ videojs-framebyframe
 [![npm](https://img.shields.io/npm/dm/videojs-framebyframe.svg)]()
 [![License](https://img.shields.io/npm/l/videojs-framebyframe.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/erasche/videojs-framebyframe.svg?branch=master)](https://travis-ci.org/erasche/videojs-framebyframe)
+![Bower](https://benschwarz.github.io/bower-badges/badge@2x.png)
 
 [Check out the demo!](https://erasche.github.io/videojs-framebyframe)
 
