@@ -21,3 +21,9 @@ framerate beforehand.
 ## Other
 
 - There's 4.X videojs code in the similarly named branch.
+
+## License
+
+GPL3.
+
+If you need BSD, just ask. I'm pretty likely to add it.
