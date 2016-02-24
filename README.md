@@ -15,6 +15,13 @@ This has to make an unfortunate assumption about framerate, but it should be
 "ok" for general use. If you can run framerate detection on the server side,
 this plugin works perfectly for you.
 
+## Installation
+
+```console
+$ npm install videojs-framebyframe
+$ bower install videojs-framebyframe
+```
+
 ## Framerate Issues
 
 We have no easy way to calculate framerate in Javascript, so we make a guess.
