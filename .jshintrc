@@ -13,8 +13,7 @@
         "require"   : false,
         "module"    : false,
         "console"   : false,
-        "File"      : false,
-        "FrameByFrame": false
+        "File"      : false
     }
 }
 

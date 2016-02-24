@@ -11,6 +11,6 @@
     "requireSpacesInConditionalExpression": true,
     "requireSpaceAfterLineComment": true,
     "requirePaddingNewLinesInObjects": true,
-    "requireNewlineBeforeBlockStatements": true,
+    "requireNewlineBeforeBlockStatements": false,
     "requireBlocksOnNewline": true
 }
