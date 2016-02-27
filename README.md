@@ -46,6 +46,4 @@ then you should use that and supply it to your videojs instance.
 
 ## License
 
-GPL3.
-
-If you need BSD, just ask. I'm pretty likely to add it.
+Dual licensed under GPLv3 and MIT
