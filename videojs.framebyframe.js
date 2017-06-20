@@ -7,16 +7,15 @@ var FBFButton = videojs.extend(VjsButton, {
         this.player = player;
         this.frameTime = 1/options.fps;
         this.step_size = options.value;
-        this.on('click', this.onClick);
     },
 
-    onClick: function() {
+    handleClick:function() {
         // Start by pausing the player
         this.player.pause();
         // Calculate movement distance
         var dist = this.frameTime * this.step_size;
         this.player.currentTime(this.player.currentTime() + dist);
-    },
+    }
 });
 
 function framebyframe(options) {
