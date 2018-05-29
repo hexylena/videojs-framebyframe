@@ -41,7 +41,7 @@ then you should use that and supply it to your videojs instance.
 
 ## Contributors
 
-- Eric Rasche (@erasche)
+- Helena Rasche (@erasche)
 - Miguel Grinberg (@miguelgrinberg)
 
 ## License
