@@ -56,6 +56,6 @@
             });
         });
     }
-    videojs.plugin('framebyframe', framebyframe);
+    videojs.registerPlugin('framebyframe', framebyframe)
   })(window, videojs)
 })()
