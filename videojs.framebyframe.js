@@ -2,12 +2,12 @@
 
 (function(){
 
-  'use strict';
-  var videojs = null;
+  'use strict'
+  var videojs = null
   if(typeof window.videojs === 'undefined' && typeof require === 'function') {
-    videojs = require('video.js');
+    videojs = require('video.js').default
   } else {
-    videojs = window.videojs;
+    videojs = window.videojs
   }
 
   (function(window, videojs){
